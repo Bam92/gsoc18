@@ -1,14 +1,14 @@
-ajaxGet("http://localhost/gsoc18/petscan.json", function (reponse) {
+ajaxGet("http://localhost/gsoc18/petscan2.json", function (reponse) {
 
     // Parse Data into objects.
     var queries = JSON.parse(reponse);
 
     // Display titles of pages
-    queries.forEach(function (query) {    
+    queries['*'][0].a['*'].forEach(function (query) {    
         // link to the given article. use frwiki for this example        
         var link = document.createElement("a");
         link.textContent = query.title;
-        link.href = "https://fr.wikipedia.org/w/" + query.title;
+        link.href = "https://en.wikipedia.org/wiki/" + query.title;
         
         var listElt = document.createElement("li"); // creating an li  tag        
         //listElt.textContent = link; // here we define the content of the li tag
